@@ -1,67 +1,52 @@
-# QA Test Todo Application
+# Daily Tribune News Platform
 
-A simple todo application designed for testing the QA Automation Platform.
+A modern news platform API built with FastAPI.
 
 ## Features
 
-- ✅ Add new todos
-- ✅ Mark todos as complete/incomplete
-- ✅ Delete todos
-- ✅ Persistent storage using localStorage
-- ✅ Statistics tracking (total, active, completed)
-- ✅ Responsive design
-- ✅ Data-testid attributes for automated testing
+- **Article Management** (SCRUM-5)
+  - Rich text editor support (SCRUM-6)
+  - Publishing workflow: Draft -> Review -> Published (SCRUM-7)
+  - Full-text search (SCRUM-8)
+  - Scheduled publishing (SCRUM-9)
 
-## Testing Elements
+- **User Authentication** (SCRUM-10)
+  - JWT with refresh tokens (SCRUM-11)
+  - Social login: Google, Apple (SCRUM-12)
+  - Subscription tiers: Free, Premium, VIP (SCRUM-13)
+  - User profiles and preferences (SCRUM-14)
 
-This application includes comprehensive data-testid attributes for automated testing:
+- **Comments & Community** (SCRUM-15)
+  - Threaded comments (SCRUM-16)
+  - Moderation system (SCRUM-17)
+  - Reactions (SCRUM-18)
 
-### Input Fields
-- `data-testid="input-todo"` - Main todo input field
+## Tech Stack
 
-### Buttons
-- `data-testid="button-add-todo"` - Add todo button
-- `data-testid="button-delete-{id}"` - Delete buttons for each todo
+- **Backend**: FastAPI, SQLAlchemy
+- **Database**: PostgreSQL (SCRUM-19)
+- **Cache**: Redis (SCRUM-20)
+- **Search**: Elasticsearch (SCRUM-21)
+- **Auth**: JWT, OAuth 2.0
 
-### Lists and Items
-- `data-testid="list-todos"` - Todo list container
-- `data-testid="todo-item-{id}"` - Individual todo items
-- `data-testid="checkbox-{id}"` - Todo completion checkboxes
-- `data-testid="text-{id}"` - Todo text content
+## Getting Started
 
-### Statistics
-- `data-testid="stat-total"` - Total todos count
-- `data-testid="stat-active"` - Active todos count
-- `data-testid="stat-completed"` - Completed todos count
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-## Test Scenarios
+# Set up environment
+cp .env.example .env
 
-Perfect for testing:
-1. **Form interactions** - Adding todos via button click or Enter key
-2. **State management** - Checking/unchecking todos
-3. **CRUD operations** - Create, read, update, delete todos
-4. **Data persistence** - LocalStorage functionality
-5. **UI updates** - Dynamic rendering and statistics
-6. **Edge cases** - Empty states, long text, special characters
+# Run migrations
+alembic upgrade head
 
-## How to Use
+# Start server
+uvicorn src.main:app --reload
+```
 
-1. Open index.html in a browser
-2. Start adding todos
-3. Test various interactions
-4. Use the QA Automation Platform to run automated tests
+## API Documentation
 
-## Technologies
-
-- Pure HTML5
-- CSS3 with modern styling
-- Vanilla JavaScript (ES6+)
-- LocalStorage API
-
-## Live Demo
-
-Visit the GitHub Pages deployment (if enabled) or clone and open index.html locally.
-
----
-
-Built specifically for testing with the QA Automation Platform 🚀
+Once running, visit:
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
